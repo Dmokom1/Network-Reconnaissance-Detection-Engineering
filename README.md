@@ -54,6 +54,27 @@ This project helped me understand:
 
 ---
 
+
+
+## Architecture
+
+```mermaid
+graph TD
+    subgraph "Lab Environment"
+        A[Attacker VM<br/>Kali Linux] --> B[Target DC<br/>Windows Server]
+        B --> C[SIEM/Log Aggregator<br/>Security Onion/Elastic]
+        C --> D[Detection Engine<br/>EQL/Sigma Rules]
+    end
+    
+    subgraph "Detection Flow"
+        E[Reconnaissance Activity] --> F[Network Telemetry]
+        F --> G[Log Collection]
+        G --> H[Alert Generation]
+        H --> I[Incident Response]
+    end
+```
+*High‑level lab architecture showing components and detection flow.*
+
 ## Tools Used
 
 | Tool | Purpose |
@@ -378,3 +399,27 @@ If I expanded this project, I would improve it by:
 | `Screenshots/07-kibana-custom-rule-visible.png` | Custom rule enabled and visible in Elastic |
 | `Screenshots/08-targeted-nmap-scan-dc.png` | Targeted validation scan against the domain controller |
 | `Screenshots/09-custom-rule-fired-history.png` | Custom rule generated an alert during validation |
+
+## What I Learned
+
+This project helped me develop practical skills in:
+
+- **Detection Engineering**: Creating rules to identify suspicious activity
+- **Network Security**: Understanding reconnaissance patterns and anomalies
+- **SIEM Operations**: Configuring and using security monitoring tools
+- **Incident Response**: Investigating and validating security alerts
+- **Lab Building**: Creating realistic training environments for hands‑on practice
+
+The hands‑on experience reinforced theoretical knowledge and improved my ability to translate security concepts into operational detection logic.
+
+
+---
+
+## Repository Information
+
+**Repository**: [Network-Reconnaissance-Detection-Engineering](https://github.com/Dmokom1/Network-Reconnaissance-Detection-Engineering)  
+**Author**: Dmokom1  
+**License**: MIT License  
+**Status**: Active learning project  
+
+*This repository documents my hands‑on security lab work. The content reflects my learning journey and practical application of blue team concepts.*
