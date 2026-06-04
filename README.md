@@ -419,7 +419,6 @@ The hands‑on experience reinforced theoretical knowledge and improved my abili
 
 **Repository**: [Network-Reconnaissance-Detection-Engineering](https://github.com/Dmokom1/Network-Reconnaissance-Detection-Engineering)  
 **Author**: Dmokom1  
-**License**: MIT License  
 **Status**: Active learning project  
 
 *This repository documents my hands‑on security lab work. The content reflects my learning journey and practical application of blue team concepts.*
