@@ -60,18 +60,30 @@ This project helped me understand:
 
 ```mermaid
 graph TD
-    subgraph "Lab Environment"
-        A[Attacker VM<br/>Kali Linux] --> B[Target DC<br/>Windows Server]
-        B --> C[SIEM/Log Aggregator<br/>Security Onion/Elastic]
-        C --> D[Detection Engine<br/>EQL/Sigma Rules]
+    subgraph "Reconnaissance Activity"
+        A[Kali Scanner] --> B[Nmap Scanning]
+        B --> C[Windows Target]
     end
     
-    subgraph "Detection Flow"
-        E[Reconnaissance Activity] --> F[Network Telemetry]
-        F --> G[Log Collection]
-        G --> H[Alert Generation]
-        H --> I[Incident Response]
+    subgraph "Network Monitoring"
+        D[Zeek]
+        E[Suricata]
+        F[Network Sensors]
     end
+    
+    subgraph "SIEM & Detection"
+        G[Security Onion]
+        H[Custom SIEM Rules]
+        I[Alert Generation]
+    end
+    
+    C --> D
+    C --> E
+    D --> G
+    E --> G
+    F --> G
+    G --> H
+    H --> I
 ```
 *High‑level lab architecture showing components and detection flow.*
 
